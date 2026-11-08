@@ -35,5 +35,5 @@ def main():
                         c.execute("INSERT INTO risk_alerts(event_id,reasons) VALUES(%s,%s) ON CONFLICT DO NOTHING",
                                   (flagged["event_id"],reasons))
     except KeyboardInterrupt: pass
-    finally: consumer.close()
+    finally: consumer.close() #closes the consumer gracefully
 if __name__=="__main__": main()
