@@ -3,7 +3,7 @@ from confluent_kafka import Consumer
 import psycopg
 from app.rules import assess
 
-DB=os.getenv("DATABASE_URL","postgresql://portfolio:portfolio@localhost:5435/transactions")
+DB=os.getenv("DATABASE_URL","postgresql://portfolio:portfolio@localhost:5435/transactions") #database url
 def main():
     with psycopg.connect(DB) as c:
         c.execute("""CREATE TABLE IF NOT EXISTS transactions(
